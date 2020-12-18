@@ -16,6 +16,7 @@
 		448CE7D42589CC920064007F /* PlantyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448CE7D32589CC920064007F /* PlantyTests.swift */; };
 		448CE7DF2589CC920064007F /* PlantyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448CE7DE2589CC920064007F /* PlantyUITests.swift */; };
 		448CE812258C5CF10064007F /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448CE811258C5CF10064007F /* Plant.swift */; };
+		448CE828258C72880064007F /* PlantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448CE827258C72880064007F /* PlantController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		448CE7DE2589CC920064007F /* PlantyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantyUITests.swift; sourceTree = "<group>"; };
 		448CE7E02589CC920064007F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		448CE811258C5CF10064007F /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
+		448CE827258C72880064007F /* PlantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				448CE7BC2589CC8B0064007F /* AppDelegate.swift */,
 				448CE7BE2589CC8B0064007F /* SceneDelegate.swift */,
 				448CE7C02589CC8B0064007F /* ViewController.swift */,
+				448CE826258C72730064007F /* Model Controller */,
 				448CE80D258C5CDC0064007F /* Model */,
 				448CE7C52589CC910064007F /* Assets.xcassets */,
 				448CE7EF2589D03A0064007F /* Storyboard */,
@@ -145,6 +148,14 @@
 				448CE811258C5CF10064007F /* Plant.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		448CE826258C72730064007F /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				448CE827258C72880064007F /* PlantController.swift */,
+			);
+			path = "Model Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				448CE828258C72880064007F /* PlantController.swift in Sources */,
 				448CE7C12589CC8B0064007F /* ViewController.swift in Sources */,
 				448CE812258C5CF10064007F /* Plant.swift in Sources */,
 				448CE7BD2589CC8B0064007F /* AppDelegate.swift in Sources */,
