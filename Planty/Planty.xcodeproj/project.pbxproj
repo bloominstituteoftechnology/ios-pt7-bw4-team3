@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4415FE2C25A4B4CF00C0F7AC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4415FE2B25A4B4CF00C0F7AC /* DetailViewController.swift */; };
+		4415FE3525A4B4F300C0F7AC /* PlantTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4415FE3425A4B4F300C0F7AC /* PlantTableViewCell.m */; };
 		448CE7BD2589CC8B0064007F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448CE7BC2589CC8B0064007F /* AppDelegate.swift */; };
 		448CE7BF2589CC8B0064007F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448CE7BE2589CC8B0064007F /* SceneDelegate.swift */; };
-		448CE7C12589CC8B0064007F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448CE7C02589CC8B0064007F /* ViewController.swift */; };
 		448CE7C42589CC8C0064007F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 448CE7C22589CC8C0064007F /* Main.storyboard */; };
 		448CE7C62589CC910064007F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 448CE7C52589CC910064007F /* Assets.xcassets */; };
 		448CE7C92589CC910064007F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 448CE7C72589CC910064007F /* LaunchScreen.storyboard */; };
@@ -17,6 +18,12 @@
 		448CE7DF2589CC920064007F /* PlantyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448CE7DE2589CC920064007F /* PlantyUITests.swift */; };
 		448CE812258C5CF10064007F /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448CE811258C5CF10064007F /* Plant.swift */; };
 		448CE828258C72880064007F /* PlantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448CE827258C72880064007F /* PlantController.swift */; };
+		4495C341259BD1B8009AE4A2 /* ThirstyPlantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4495C340259BD1B8009AE4A2 /* ThirstyPlantTableViewCell.swift */; };
+		44E9DB9425944BBC002C48B6 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E9DB9325944BBC002C48B6 /* HomePageViewController.swift */; };
+		44E9DBA825945241002C48B6 /* ThirstyPlantsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E9DBA725945241002C48B6 /* ThirstyPlantsTableViewController.swift */; };
+		44E9DBAD259A6158002C48B6 /* AddPlantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E9DBAC259A6158002C48B6 /* AddPlantViewController.swift */; };
+		44E9DBB3259A6748002C48B6 /* WaterDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E9DBB2259A6748002C48B6 /* WaterDateViewController.swift */; };
+		44E9DBB8259A6753002C48B6 /* PlantTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E9DBB7259A6753002C48B6 /* PlantTypeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,10 +44,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4415FE2B25A4B4CF00C0F7AC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		4415FE3325A4B4F300C0F7AC /* PlantTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlantTableViewCell.h; sourceTree = "<group>"; };
+		4415FE3425A4B4F300C0F7AC /* PlantTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlantTableViewCell.m; sourceTree = "<group>"; };
+		445B10E325A4BE5900D2663B /* Planty-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Planty-Bridging-Header.h"; sourceTree = "<group>"; };
 		448CE7B92589CC8B0064007F /* Planty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Planty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		448CE7BC2589CC8B0064007F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		448CE7BE2589CC8B0064007F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		448CE7C02589CC8B0064007F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		448CE7C32589CC8C0064007F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		448CE7C52589CC910064007F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		448CE7C82589CC910064007F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,6 +63,12 @@
 		448CE7E02589CC920064007F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		448CE811258C5CF10064007F /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
 		448CE827258C72880064007F /* PlantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantController.swift; sourceTree = "<group>"; };
+		4495C340259BD1B8009AE4A2 /* ThirstyPlantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirstyPlantTableViewCell.swift; sourceTree = "<group>"; };
+		44E9DB9325944BBC002C48B6 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		44E9DBA725945241002C48B6 /* ThirstyPlantsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirstyPlantsTableViewController.swift; sourceTree = "<group>"; };
+		44E9DBAC259A6158002C48B6 /* AddPlantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantViewController.swift; sourceTree = "<group>"; };
+		44E9DBB2259A6748002C48B6 /* WaterDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterDateViewController.swift; sourceTree = "<group>"; };
+		44E9DBB7259A6753002C48B6 /* PlantTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantTypeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +121,9 @@
 			children = (
 				448CE7BC2589CC8B0064007F /* AppDelegate.swift */,
 				448CE7BE2589CC8B0064007F /* SceneDelegate.swift */,
-				448CE7C02589CC8B0064007F /* ViewController.swift */,
+				4495C332259BD147009AE4A2 /* Cell */,
+				44E9DB8F25944A98002C48B6 /* View Controller */,
+				44E9DBB1259A672F002C48B6 /* Picker View */,
 				448CE826258C72730064007F /* Model Controller */,
 				448CE80D258C5CDC0064007F /* Model */,
 				448CE7C52589CC910064007F /* Assets.xcassets */,
@@ -156,6 +174,37 @@
 				448CE827258C72880064007F /* PlantController.swift */,
 			);
 			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		4495C332259BD147009AE4A2 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4495C340259BD1B8009AE4A2 /* ThirstyPlantTableViewCell.swift */,
+				4415FE3325A4B4F300C0F7AC /* PlantTableViewCell.h */,
+				4415FE3425A4B4F300C0F7AC /* PlantTableViewCell.m */,
+				445B10E325A4BE5900D2663B /* Planty-Bridging-Header.h */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		44E9DB8F25944A98002C48B6 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				44E9DB9325944BBC002C48B6 /* HomePageViewController.swift */,
+				4415FE2B25A4B4CF00C0F7AC /* DetailViewController.swift */,
+				44E9DBA725945241002C48B6 /* ThirstyPlantsTableViewController.swift */,
+				44E9DBAC259A6158002C48B6 /* AddPlantViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		44E9DBB1259A672F002C48B6 /* Picker View */ = {
+			isa = PBXGroup;
+			children = (
+				44E9DBB2259A6748002C48B6 /* WaterDateViewController.swift */,
+				44E9DBB7259A6753002C48B6 /* PlantTypeViewController.swift */,
+			);
+			path = "Picker View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +274,7 @@
 				TargetAttributes = {
 					448CE7B82589CC8B0064007F = {
 						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1220;
 					};
 					448CE7CE2589CC910064007F = {
 						CreatedOnToolsVersion = 12.2;
@@ -289,10 +339,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				448CE828258C72880064007F /* PlantController.swift in Sources */,
-				448CE7C12589CC8B0064007F /* ViewController.swift in Sources */,
 				448CE812258C5CF10064007F /* Plant.swift in Sources */,
+				4415FE2C25A4B4CF00C0F7AC /* DetailViewController.swift in Sources */,
+				4495C341259BD1B8009AE4A2 /* ThirstyPlantTableViewCell.swift in Sources */,
 				448CE7BD2589CC8B0064007F /* AppDelegate.swift in Sources */,
+				4415FE3525A4B4F300C0F7AC /* PlantTableViewCell.m in Sources */,
+				44E9DBA825945241002C48B6 /* ThirstyPlantsTableViewController.swift in Sources */,
+				44E9DB9425944BBC002C48B6 /* HomePageViewController.swift in Sources */,
+				44E9DBB3259A6748002C48B6 /* WaterDateViewController.swift in Sources */,
 				448CE7BF2589CC8B0064007F /* SceneDelegate.swift in Sources */,
+				44E9DBAD259A6158002C48B6 /* AddPlantViewController.swift in Sources */,
+				44E9DBB8259A6753002C48B6 /* PlantTypeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +525,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HQ2TDS9ZTM;
 				INFOPLIST_FILE = Planty/Info.plist;
@@ -477,6 +535,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = CraigGladJohn.Planty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/craig/Documents/Lambda/Unit4/Build/ios-pt7-bw4-team3/Planty/Planty/Cell/Planty-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -487,6 +547,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HQ2TDS9ZTM;
 				INFOPLIST_FILE = Planty/Info.plist;
@@ -496,6 +557,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = CraigGladJohn.Planty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/craig/Documents/Lambda/Unit4/Build/ios-pt7-bw4-team3/Planty/Planty/Cell/Planty-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

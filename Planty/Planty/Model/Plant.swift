@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import AVFoundation
 
 struct Plant: Equatable, Codable {
     var name: String

@@ -1,24 +1,465 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FI6-91-TNT">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home Page-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomePageViewController" customModule="Planty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SamplePlant2" translatesAutoresizingMaskIntoConstraints="NO" id="qLt-MW-S0n">
+                                <rect key="frame" x="0.0" y="140" width="414" height="264"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="264" id="3Sx-ca-1Ya"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="264" id="HOZ-L1-WHS"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ffr-Bs-MGK">
+                                <rect key="frame" x="0.0" y="448.5" width="414" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# of plants to water" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faL-gP-vG0">
+                                        <rect key="frame" x="0.0" y="0.0" width="207" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79a-3b-wPv">
+                                        <rect key="frame" x="207" y="0.0" width="207" height="30"/>
+                                        <state key="normal" title="Water Plants"/>
+                                        <connections>
+                                            <action selector="waterPlants:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GR2-YQ-IHt"/>
+                                            <segue destination="8WH-Nt-EOQ" kind="show" identifier="WaterPlant" id="ENU-xo-22e"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recent Plant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQr-h9-mu9">
+                                <rect key="frame" x="158.5" y="412" width="97" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bZI-dg-Ien">
+                                <rect key="frame" x="0.0" y="494.5" width="414" height="367.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="separatorColor" red="0.55154210329999998" green="0.70205205680000005" blue="0.41014361379999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="ciu-Je-a1L" detailTextLabel="hEh-14-Aa1" style="IBUITableViewCellStyleSubtitle" id="q1B-Gp-c0M" customClass="PlantTableViewCell" customModule="Planty" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="q1B-Gp-c0M" id="w5L-5F-CeJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ciu-Je-a1L">
+                                                    <rect key="frame" x="20" y="10" width="33" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hEh-14-Aa1">
+                                                    <rect key="frame" x="20" y="31.5" width="44" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="QEL-40-ukM" kind="show" identifier="ShowPlant" id="N1e-2b-PIR"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.55154210329999998" green="0.70205205680000005" blue="0.41014361379999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qLt-MW-S0n" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="63P-5z-4to"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qLt-MW-S0n" secondAttribute="trailing" id="6d6-Dm-C9y"/>
+                            <constraint firstItem="tQr-h9-mu9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="83d-xp-hhI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bZI-dg-Ien" secondAttribute="bottom" id="8PC-Pt-FBz"/>
+                            <constraint firstItem="tQr-h9-mu9" firstAttribute="top" secondItem="qLt-MW-S0n" secondAttribute="bottom" constant="8" symbolic="YES" id="IhO-lI-sXJ"/>
+                            <constraint firstItem="qLt-MW-S0n" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Z8d-5x-uMk"/>
+                            <constraint firstItem="qLt-MW-S0n" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cLu-Uh-NrJ"/>
+                            <constraint firstItem="Ffr-Bs-MGK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="d46-oT-lkM"/>
+                            <constraint firstItem="tQr-h9-mu9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="158.5" id="f8E-ZL-5tD"/>
+                            <constraint firstItem="bZI-dg-Ien" firstAttribute="top" secondItem="Ffr-Bs-MGK" secondAttribute="bottom" constant="16" id="iKj-gU-8hV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qLt-MW-S0n" secondAttribute="bottom" constant="458" id="mAg-Bq-zxS"/>
+                            <constraint firstItem="bZI-dg-Ien" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="noX-A8-TYk"/>
+                            <constraint firstItem="Ffr-Bs-MGK" firstAttribute="top" secondItem="tQr-h9-mu9" secondAttribute="bottom" constant="16" id="ryL-r8-bp0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tQr-h9-mu9" secondAttribute="trailing" constant="158.5" id="s1N-Nh-XKY"/>
+                            <constraint firstItem="bZI-dg-Ien" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vHH-Ln-OTn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ffr-Bs-MGK" secondAttribute="trailing" id="x6E-Lq-n42"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Home Page" id="cZf-xp-NM7">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="MfC-PT-WKH">
+                            <connections>
+                                <segue destination="3RW-n3-e7S" kind="show" identifier="AddPlant" id="nCN-3a-9pW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="homePageTableView" destination="bZI-dg-Ien" id="XML-Ja-USE"/>
+                        <outlet property="plantsToWater" destination="faL-gP-vG0" id="YWB-UG-s0H"/>
+                        <outlet property="recentPlant" destination="tQr-h9-mu9" id="Eyg-Dc-zuo"/>
+                        <outlet property="recentPlantImage" destination="qLt-MW-S0n" id="tvT-rl-v7N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-7.2463768115942031" y="172.76785714285714"/>
+        </scene>
+        <!--Add A Planty-->
+        <scene sceneID="Mym-qG-Q2Y">
+            <objects>
+                <viewController id="3RW-n3-e7S" customClass="AddPlantViewController" customModule="Planty" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RVp-0H-qJ4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ymf-pG-zhJ">
+                                <rect key="frame" x="20" y="169" width="374" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pom-3Y-h3p">
+                                <rect key="frame" x="20" y="631" width="374" height="30"/>
+                                <color key="backgroundColor" red="0.049630305200000002" green="0.19421103570000001" blue="0.069247469440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <state key="normal" title=" Record Audio">
+                                    <color key="titleColor" systemColor="systemRedColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleAudioButton:" destination="3RW-n3-e7S" eventType="touchUpInside" id="1Vz-iZ-G2e"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i4c-4t-Dvn">
+                                <rect key="frame" x="20" y="721" width="374" height="30"/>
+                                <color key="backgroundColor" red="0.049630305200000002" green="0.19421103570000001" blue="0.069247469440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.55154210329999998" green="0.70205205680000005" blue="0.41014361379999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Add A Water Date"/>
+                                <connections>
+                                    <segue destination="ynT-pT-t9G" kind="popoverPresentation" identifier="WaterDate" popoverAnchorView="i4c-4t-Dvn" id="tmw-VF-cPS">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nmq-H2-Fkv">
+                                <rect key="frame" x="20" y="676" width="374" height="30"/>
+                                <color key="backgroundColor" red="0.049630305200000002" green="0.19421103570000001" blue="0.069247469440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.55154210329999998" green="0.70205205680000005" blue="0.41014361379999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Type of Plant"/>
+                                <connections>
+                                    <segue destination="jbu-dt-3JD" kind="popoverPresentation" identifier="PlantType" popoverAnchorView="Nmq-H2-Fkv" id="Cm3-JT-lC4">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a plant:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKO-Dm-gjG">
+                                <rect key="frame" x="20" y="140" width="91" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a photo:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ME-op-bMY">
+                                <rect key="frame" x="20" y="211" width="98" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus.app" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="2uV-rn-4y0">
+                                <rect key="frame" x="20" y="254" width="374" height="306.5"/>
+                                <color key="tintColor" red="0.77100791703728833" green="0.99341344281401422" blue="0.57293021361043195" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="Opq-Qu-5of"/>
+                                    <constraint firstAttribute="height" constant="309" id="jCa-Lf-1Gf"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oaC-cd-tca">
+                                <rect key="frame" x="20" y="586" width="374" height="30"/>
+                                <color key="backgroundColor" red="0.049630305200000002" green="0.19421103570000001" blue="0.069247469440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="5ug-27-lVU"/>
+                                </constraints>
+                                <state key="normal" image="camera.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="addPhotoButton:" destination="3RW-n3-e7S" eventType="touchUpInside" id="hQI-P0-JIU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dnS-cC-UuP"/>
+                        <color key="backgroundColor" red="0.55154210329999998" green="0.70205205680000005" blue="0.41014361379999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dnS-cC-UuP" firstAttribute="trailing" secondItem="i4c-4t-Dvn" secondAttribute="trailing" constant="20" id="3fG-NT-Jd0"/>
+                            <constraint firstItem="dnS-cC-UuP" firstAttribute="bottom" secondItem="i4c-4t-Dvn" secondAttribute="bottom" constant="111" id="9Cm-n8-sbg"/>
+                            <constraint firstItem="dnS-cC-UuP" firstAttribute="trailing" secondItem="pom-3Y-h3p" secondAttribute="trailing" constant="20" id="AyE-5C-i57"/>
+                            <constraint firstItem="dnS-cC-UuP" firstAttribute="trailing" secondItem="oaC-cd-tca" secondAttribute="trailing" constant="20" id="IhT-KG-7i4"/>
+                            <constraint firstItem="7ME-op-bMY" firstAttribute="top" secondItem="Ymf-pG-zhJ" secondAttribute="bottom" constant="8" symbolic="YES" id="KIB-b6-Fcg"/>
+                            <constraint firstItem="2uV-rn-4y0" firstAttribute="top" secondItem="7ME-op-bMY" secondAttribute="bottom" constant="21" id="L08-ev-KzN"/>
+                            <constraint firstItem="i4c-4t-Dvn" firstAttribute="leading" secondItem="dnS-cC-UuP" secondAttribute="leading" constant="20" id="PiC-ti-t19"/>
+                            <constraint firstItem="i4c-4t-Dvn" firstAttribute="top" secondItem="Nmq-H2-Fkv" secondAttribute="bottom" constant="15" id="UgG-lP-pYS"/>
+                            <constraint firstItem="pom-3Y-h3p" firstAttribute="top" secondItem="oaC-cd-tca" secondAttribute="bottom" constant="15" id="WRO-pa-gDe"/>
+                            <constraint firstItem="JKO-Dm-gjG" firstAttribute="leading" secondItem="dnS-cC-UuP" secondAttribute="leading" constant="20" id="XPr-hh-ExU"/>
+                            <constraint firstItem="JKO-Dm-gjG" firstAttribute="top" secondItem="dnS-cC-UuP" secondAttribute="top" id="XZU-sa-LBg"/>
+                            <constraint firstItem="Ymf-pG-zhJ" firstAttribute="top" secondItem="JKO-Dm-gjG" secondAttribute="bottom" constant="8" symbolic="YES" id="acs-XR-KLc"/>
+                            <constraint firstItem="pom-3Y-h3p" firstAttribute="leading" secondItem="dnS-cC-UuP" secondAttribute="leading" constant="20" id="bJs-ig-deq"/>
+                            <constraint firstItem="Nmq-H2-Fkv" firstAttribute="top" secondItem="pom-3Y-h3p" secondAttribute="bottom" constant="15" id="cPt-Nb-wuR"/>
+                            <constraint firstItem="2uV-rn-4y0" firstAttribute="centerX" secondItem="RVp-0H-qJ4" secondAttribute="centerX" id="dZ9-tH-nDB"/>
+                            <constraint firstItem="oaC-cd-tca" firstAttribute="top" secondItem="2uV-rn-4y0" secondAttribute="bottom" constant="24" id="dp2-o8-pk2"/>
+                            <constraint firstItem="oaC-cd-tca" firstAttribute="leading" secondItem="dnS-cC-UuP" secondAttribute="leading" constant="20" id="dvx-rk-sMz"/>
+                            <constraint firstItem="7ME-op-bMY" firstAttribute="leading" secondItem="dnS-cC-UuP" secondAttribute="leading" constant="20" id="e32-NC-zc1"/>
+                            <constraint firstItem="dnS-cC-UuP" firstAttribute="trailing" secondItem="Ymf-pG-zhJ" secondAttribute="trailing" constant="20" id="t2X-pH-bk5"/>
+                            <constraint firstItem="dnS-cC-UuP" firstAttribute="trailing" secondItem="Nmq-H2-Fkv" secondAttribute="trailing" constant="20" id="u5S-Sw-uNQ"/>
+                            <constraint firstItem="Ymf-pG-zhJ" firstAttribute="leading" secondItem="dnS-cC-UuP" secondAttribute="leading" constant="20" id="ux6-pX-8C7"/>
+                            <constraint firstItem="Nmq-H2-Fkv" firstAttribute="leading" secondItem="dnS-cC-UuP" secondAttribute="leading" constant="20" id="zXP-hl-f65"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add A Planty" id="LaU-4C-gRK">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="GWm-OV-Qhy">
+                            <connections>
+                                <action selector="savePlant:" destination="3RW-n3-e7S" id="8S1-WY-tTM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="audioNote" destination="pom-3Y-h3p" id="Jjo-3L-1cb"/>
+                        <outlet property="plantImage" destination="oaC-cd-tca" id="vOa-kB-MqE"/>
+                        <outlet property="plantImageView" destination="2uV-rn-4y0" id="MYH-Uo-K1l"/>
+                        <outlet property="plantName" destination="Ymf-pG-zhJ" id="0CI-sj-PoR"/>
+                        <outlet property="plantType" destination="Nmq-H2-Fkv" id="j1D-Rv-sbI"/>
+                        <outlet property="plantWaterDate" destination="i4c-4t-Dvn" id="01z-uL-zc4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l95-Qy-JwK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1505.7971014492755" y="131.91964285714286"/>
+        </scene>
+        <!--Plant Type View Controller-->
+        <scene sceneID="OHI-wo-KAN">
+            <objects>
+                <viewController id="jbu-dt-3JD" customClass="PlantTypeViewController" customModule="Planty" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mJ5-hU-3dp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vjX-dV-qsz">
+                                <rect key="frame" x="47" y="313" width="320" height="216"/>
+                            </pickerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LlL-IA-7o8"/>
+                        <color key="backgroundColor" red="0.55154210329999998" green="0.70205205680000005" blue="0.41014361379999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="vjX-dV-qsz" firstAttribute="centerY" secondItem="mJ5-hU-3dp" secondAttribute="centerY" id="Ecz-po-g7c"/>
+                            <constraint firstItem="vjX-dV-qsz" firstAttribute="centerX" secondItem="mJ5-hU-3dp" secondAttribute="centerX" id="bG6-vY-YiE"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="1Gw-FV-alz"/>
+                    <connections>
+                        <outlet property="plantType" destination="vjX-dV-qsz" id="yom-wd-QGY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fHQ-ab-ywg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2258" y="-154"/>
+        </scene>
+        <!--Water Date View Controller-->
+        <scene sceneID="hL0-LI-fTB">
+            <objects>
+                <viewController id="ynT-pT-t9G" customClass="WaterDateViewController" customModule="Planty" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8kq-E3-QKZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="1aO-FQ-rbd">
+                                <rect key="frame" x="47" y="313" width="320" height="216"/>
+                            </datePicker>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="t8s-al-fVg"/>
+                        <color key="backgroundColor" red="0.55154210329999998" green="0.70205205680000005" blue="0.41014361379999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="1aO-FQ-rbd" firstAttribute="centerY" secondItem="8kq-E3-QKZ" secondAttribute="centerY" id="h2B-72-Kj3"/>
+                            <constraint firstItem="1aO-FQ-rbd" firstAttribute="centerX" secondItem="8kq-E3-QKZ" secondAttribute="centerX" id="h7H-8h-eQ1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="KxH-Pa-ugI"/>
+                    <connections>
+                        <outlet property="waterDate" destination="1aO-FQ-rbd" id="WFX-i5-Iv2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5T8-wI-Qu8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2258" y="504"/>
+        </scene>
+        <!--Thirsty Plantys-->
+        <scene sceneID="0zd-id-2uk">
+            <objects>
+                <tableViewController id="8WH-Nt-EOQ" customClass="ThirstyPlantsTableViewController" customModule="Planty" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tp1-6w-taS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.55154210329999998" green="0.70205205680000005" blue="0.41014361379999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="eoq-1F-kpd" customClass="ThirstyPlantTableViewCell" customModule="Planty" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eoq-1F-kpd" id="Vm7-VK-dmq">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0g1-sc-ze9">
+                                            <rect key="frame" x="20" y="11" width="358" height="21.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="0g1-sc-ze9" secondAttribute="trailing" constant="16" id="EfY-cD-dkA"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="0g1-sc-ze9" secondAttribute="bottom" constant="0.5" id="ITp-Kp-wQs"/>
+                                        <constraint firstItem="0g1-sc-ze9" firstAttribute="leading" secondItem="Vm7-VK-dmq" secondAttribute="leadingMargin" id="Qee-ej-CxC"/>
+                                        <constraint firstItem="0g1-sc-ze9" firstAttribute="top" secondItem="Vm7-VK-dmq" secondAttribute="topMargin" id="q5n-a9-EOU"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="QEL-40-ukM" kind="show" identifier="AddWaterToPlant" id="GFX-vf-pUj"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="8WH-Nt-EOQ" id="aly-gt-abV"/>
+                            <outlet property="delegate" destination="8WH-Nt-EOQ" id="OlE-O4-6kr"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Thirsty Plantys" id="yYs-rm-0Ri"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pES-YU-hAQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="763.768115942029" y="-264.50892857142856"/>
+        </scene>
+        <!--Plant-->
+        <scene sceneID="Sqg-RE-9Fb">
+            <objects>
+                <viewController id="QEL-40-ukM" customClass="DetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ql8-4A-b3z">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plant Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tF1-4t-fV1">
+                                <rect key="frame" x="169" y="394" width="81" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Water Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvq-n0-ivQ">
+                                <rect key="frame" x="164" y="423" width="86" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ndI-on-ZbK">
+                                <rect key="frame" x="20" y="452" width="374" height="30"/>
+                                <color key="backgroundColor" red="0.049630305200000002" green="0.19421103570000001" blue="0.069247469440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <state key="normal" title="Play Audio Note"/>
+                                <connections>
+                                    <action selector="playAudioNoteButton:" destination="QEL-40-ukM" eventType="touchUpInside" id="tpo-vh-tZB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i1j-xH-g1W">
+                                <rect key="frame" x="20" y="490" width="374" height="30"/>
+                                <color key="backgroundColor" red="0.049630305200000002" green="0.19421103570000001" blue="0.069247469440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.55154210329999998" green="0.70205205680000005" blue="0.41014361379999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Update Water Date"/>
+                                <connections>
+                                    <action selector="updateWaterDateButton:" destination="QEL-40-ukM" eventType="touchUpInside" id="j2t-wf-9yN"/>
+                                    <segue destination="ynT-pT-t9G" kind="popoverPresentation" identifier="NewWaterDate" popoverAnchorView="i1j-xH-g1W" id="6D7-ym-iCa">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SamplePlant2" translatesAutoresizingMaskIntoConstraints="NO" id="n99-6Z-t0F">
+                                <rect key="frame" x="54" y="148" width="311" height="238"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="311" id="RS6-qe-xkJ"/>
+                                    <constraint firstAttribute="height" constant="238" id="gH1-qP-33t"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ACc-Fv-ppF"/>
+                        <color key="backgroundColor" red="0.55154210329999998" green="0.70205205680000005" blue="0.41014361379999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dvq-n0-ivQ" firstAttribute="leading" secondItem="ACc-Fv-ppF" secondAttribute="leading" constant="164" id="86f-2I-LGc"/>
+                            <constraint firstItem="ndI-on-ZbK" firstAttribute="leading" secondItem="ACc-Fv-ppF" secondAttribute="leading" constant="20" id="Oel-nB-DgQ"/>
+                            <constraint firstItem="dvq-n0-ivQ" firstAttribute="top" secondItem="tF1-4t-fV1" secondAttribute="bottom" constant="8" symbolic="YES" id="P4P-eM-jEz"/>
+                            <constraint firstItem="ACc-Fv-ppF" firstAttribute="trailing" secondItem="ndI-on-ZbK" secondAttribute="trailing" constant="20" id="SaS-EO-ppH"/>
+                            <constraint firstItem="ACc-Fv-ppF" firstAttribute="trailing" secondItem="i1j-xH-g1W" secondAttribute="trailing" constant="20" id="U9D-yt-90v"/>
+                            <constraint firstItem="i1j-xH-g1W" firstAttribute="top" secondItem="ndI-on-ZbK" secondAttribute="bottom" constant="8" symbolic="YES" id="aO6-bt-iY2"/>
+                            <constraint firstItem="n99-6Z-t0F" firstAttribute="leading" secondItem="ACc-Fv-ppF" secondAttribute="leading" constant="54" id="diu-uU-Ek4"/>
+                            <constraint firstItem="ACc-Fv-ppF" firstAttribute="bottom" secondItem="i1j-xH-g1W" secondAttribute="bottom" constant="342" id="fHN-a5-FfD"/>
+                            <constraint firstItem="tF1-4t-fV1" firstAttribute="top" secondItem="n99-6Z-t0F" secondAttribute="bottom" constant="8" symbolic="YES" id="grI-53-jzU"/>
+                            <constraint firstItem="tF1-4t-fV1" firstAttribute="leading" secondItem="ACc-Fv-ppF" secondAttribute="leading" constant="169" id="nrL-pW-agp"/>
+                            <constraint firstItem="i1j-xH-g1W" firstAttribute="leading" secondItem="ACc-Fv-ppF" secondAttribute="leading" constant="20" id="si4-GH-Ad8"/>
+                            <constraint firstItem="ndI-on-ZbK" firstAttribute="top" secondItem="dvq-n0-ivQ" secondAttribute="bottom" constant="8" symbolic="YES" id="zhV-ap-H1y"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Plant" id="DeA-VY-29m"/>
+                    <connections>
+                        <outlet property="plantImage" destination="n99-6Z-t0F" id="s8R-CA-0xi"/>
+                        <outlet property="plantTypeLabel" destination="tF1-4t-fV1" id="Fvi-29-WKg"/>
+                        <outlet property="plantWaterDateLabel" destination="dvq-n0-ivQ" id="Ryl-68-IOD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="slO-Yn-Ve1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="763.768115942029" y="413.83928571428572"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gEr-mv-4Lu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FI6-91-TNT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="3ot-DY-LxJ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="H0M-q5-3aE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dsQ-ik-l5P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-688.40579710144937" y="172.76785714285714"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="N1e-2b-PIR"/>
+        <segue reference="tmw-VF-cPS"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="SamplePlant2" width="3269" height="4500"/>
+        <image name="camera.fill" catalog="system" width="128" height="94"/>
+        <image name="plus.app" catalog="system" width="128" height="114"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
